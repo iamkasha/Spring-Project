@@ -29,8 +29,9 @@ public class SubmissionsService {
         return submissionsRepository.updateSubmission(id, updatedSubmission);
     }
 
-    public void deleteSubmission(int id) {
+    public boolean deleteSubmission(int id) {
         submissionsRepository.deleteSubmission(id);
+        return false;
     }
 }
 

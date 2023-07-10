@@ -45,7 +45,8 @@ public class SubmissionRepositoryImpl {
         return null; // Or throw an exception if the submission is not found
     }
 
-    public void deleteSubmission(int id) {
+    public int deleteSubmission(int id) {
         submissions.removeIf(submission -> submission.getId() == id);
+        return id;
     }
 }
