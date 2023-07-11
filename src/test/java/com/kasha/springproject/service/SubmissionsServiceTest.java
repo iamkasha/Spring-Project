@@ -34,9 +34,9 @@ public class SubmissionsServiceTest {
     @Test
     public void testGetAllSubmissions() {
         List<SubmissionsDTO> mockSubmissions = Arrays.asList(
-                new SubmissionsDTO(1, "Submission 1"),
-                new SubmissionsDTO(2, "Submission 2"),
-                new SubmissionsDTO(3, "Submission 3")
+                new SubmissionsDTO(1, "Sachin"),
+                new SubmissionsDTO(2, "Virat"),
+                new SubmissionsDTO(3, "MS Dhoni")
         );
 
         when(submissionRepository.getAllSubmissions()).thenReturn(mockSubmissions);
@@ -57,7 +57,7 @@ public class SubmissionsServiceTest {
 
     @Test
     public void testCreateSubmission() {
-        SubmissionsDTO mockSubmission = new SubmissionsDTO(1, "New Submission");
+        SubmissionsDTO mockSubmission = new SubmissionsDTO(1, "Sachin");
 
         when(submissionRepository.createSubmission(any(SubmissionsDTO.class))).thenReturn(mockSubmission);
 
@@ -78,7 +78,7 @@ public class SubmissionsServiceTest {
     @Test
     public void testUpdateSubmission() {
         int submissionId = 1;
-        SubmissionsDTO updatedSubmission = new SubmissionsDTO(submissionId, "Updated Submission");
+        SubmissionsDTO updatedSubmission = new SubmissionsDTO(submissionId, "Dravid");
 
         when(submissionRepository.updateSubmission(eq(submissionId), any(SubmissionsDTO.class))).thenReturn(updatedSubmission);
 
@@ -91,7 +91,7 @@ public class SubmissionsServiceTest {
     public void testUpdateSubmissionNotFound() {
 
         int submissionId = 1;
-        SubmissionsDTO updatedSubmission = new SubmissionsDTO(submissionId, "Updated Submission");
+        SubmissionsDTO updatedSubmission = new SubmissionsDTO(submissionId, "Dravid");
 
         when(submissionRepository.updateSubmission(eq(submissionId), any(SubmissionsDTO.class))).thenReturn(null);
 
